@@ -1,0 +1,454 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Binhasif Scent | Let the Smoke Speak Peace</title>
+  <meta name="description" content="Binhasif Scent — hand‑crafted, natural incense made with care. Let the smoke speak peace." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f0d0b;
+      --bg-soft: #171411;
+      --gold: #c8a45d;
+      --gold-soft: #e3c98a;
+      --text: #f5f3ef;
+      --muted: #b8b3a9;
+      --accent: #6b4f2a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #1b1713, var(--bg));
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ================== HEADER ================== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(15, 13, 11, 0.75);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--gold);
+    }
+
+    .nav-links a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.95rem;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* ================== HERO ================== */
+    .hero {
+      min-height: 90vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      background:
+        linear-gradient(rgba(15,13,11,0.6), rgba(15,13,11,0.95)),
+        url('hero.jpg') center/cover no-repeat;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--gold-soft);
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), var(--accent));
+      color: #0f0d0b;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(200,164,93,0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 45px rgba(200,164,93,0.4);
+    }
+
+    /* ================== SECTIONS ================== */
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--gold);
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 3.5rem;
+    }
+
+    /* ================== STORY ================== */
+    .story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .story p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .story img {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    /* ================== PRODUCTS ================== */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .product {
+      background: linear-gradient(180deg, #181410, #0f0d0b);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03),
+                  0 15px 50px rgba(0,0,0,0.5);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 70px rgba(0,0,0,0.7);
+    }
+
+    .product h3 {
+      font-family: 'Playfair Display', serif;
+      margin: 1rem 0 0.5rem;
+      color: var(--gold-soft);
+    }
+
+    .product p {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .price {
+      display: block;
+      margin: 1rem 0;
+      font-weight: 600;
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+
+    /* ================== VALUES ================== */
+    .values {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .value {
+      padding: 2rem;
+      border-radius: 20px;
+      background: var(--bg-soft);
+    }
+
+    .value h4 {
+      margin-bottom: 0.6rem;
+      color: var(--gold-soft);
+    }
+
+    .value p {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    /* ================== FOOTER ================== */
+    footer {
+      background: #0b0907;
+      padding: 3rem 2rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    footer h5 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+      color: var(--gold);
+    }
+
+    footer p, footer a {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    /* ================== RESPONSIVE ================== */
+    @media (max-width: 768px) {
+      .story {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <div class="logo">Binhasif Scent</div>
+      <nav class="nav-links">
+        <a href="#story">Our Story</a>
+        <a href="#products">Scents</a>
+        <a href="#values">Values</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Let the Smoke Speak Peace</h1>
+      <p>Binhasif Scent is a return to incense as it was meant to be — slow‑made, natural, and deeply rooted in calm, prayer, and home.</p>
+      <a href="#products" class="btn">Explore Our Scents</a>
+    </div>
+  </section>
+
+  <section id="story">
+    <h2 class="section-title">Our Story</h2>
+    <p class="section-sub">This is not a factory brand. This is memory, tradition, and care — reborn.</p>
+
+    <div class="story">
+      <p>
+        Binhasif Scent began quietly. Incense was never a product first — it was a presence. Something burned in the mornings, in prayer, in silence, and at dusk.
+        <br /><br />
+        Over time, it became clear that what filled the markets lacked soul. Too many shortcuts. Too much imitation. So Binhasif Scent was created to restore incense to what it once was — honest, pure, and intentional.
+        <br /><br />
+        Every stick is blended with patience. Every aroma is meant to settle the heart, cleanse the space, and speak peace without words.
+      </p>
+      <img src=1000133787.jpg?auto=format&fit=crop&w=1200&q=80" alt="Handcrafted incense" />
+    </div>
+  </section>
+
+  <section id="products">
+    <h2 class="section-title">Our Scents</h2>
+    <p class="section-sub">Each fragrance is designed for a mood, a moment, and a state of being.</p>
+
+    <div class="products">
+      <div class="product">
+        <h3>Nihla Halut</h3>
+        <p>A rare, traditional incense blend with deep spiritual warmth. Used for prayer, grounding, and inner calm.</p>
+        <span class="price">₦30000</span>
+        <button class="btn" onclick="order('Nihla Halut')">Order via WhatsApp</button>
+      </div>
+
+      <div class="product">
+        <img src="dhufr.jpg" alt="Dhufr incense" style="width:100%;border-radius:14px;margin-bottom:1rem;" />
+        <h3>Dhufr</h3>
+        <p>Pure dhufr releasing a soft, creamy aroma ideal for meditation and peaceful evenings.</p>
+        <span class="price">₦30000</span>
+        <button class="btn" onclick="order('dhufr')">Order via WhatsApp</button>
+      </div>
+
+      <div class="product">
+        <h3>sandal flakes</h3>
+        <p>Classic sandal flakes incense — clean, smoky, and deeply rooted in masjid and home traditions.</p>
+        <span class="price">₦30000</span>
+        <button class="btn" onclick="order('Dhufur')">Order via WhatsApp</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="values">
+    <h2 class="section-title">Our Values</h2>
+    <p class="section-sub">Everything we do is guided by intention.</p>
+
+    <div class="values">
+      <div class="value">
+        <h4>Natural Ingredients</h4>
+        <p>No harsh chemicals. No shortcuts. Only what belongs.</p>
+      </div>
+      <div class="value">
+        <h4>Handcrafted</h4>
+        <p>Each batch is made slowly, with attention and care.</p>
+      </div>
+      <div class="value">
+        <h4>Spiritual Calm</h4>
+        <p>Our incense is meant to quiet the room — and the heart.</p>
+      </div>
+      <div class="value">
+        <h4>Honest Trade</h4>
+        <p>Fair sourcing, respectful pricing, and sincerity.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="footer-inner">
+      <div>
+        <h5>Binhasif Scent</h5>
+        <p>Let the smoke speak peace.</p>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <p>Email: info@firdausihaladu5@gmil.com</p>
+        <p>Instagram: @binhasifscent</p>
+      </div>
+      <div>
+        <h5>Location</h5>
+        <p>Handcrafted in small batches.</p>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Binhasif Scent. All rights reserved.</div>
+  </footer>
+
+<script>
+  function order(product) {
+    const phone = '2348033127332'; // your WhatsApp number
+    const message = `As-salaamu alaykum, I would like to order ${product} from Binhasif Scent.`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</li>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</li>
+</body>
+</html>
